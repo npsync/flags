@@ -1,3 +1,9 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Our Website
+    url: https://npsync.com
+    about: Visit our website for more information
 
-
+  - name: Our Facebook Page
+    url: https://www.facebook.com/npsyncofficial
+    about: Like our Facebook page for updates
