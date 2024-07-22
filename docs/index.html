@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Documentation - Flags CDN - NpSync</title>
+        <meta
+            name="description"
+            content="Discover Flags, an open-source project providing high-quality country flags in multiple sizes. Ideal for any purpose."
+        />
+
+        <!-- OG Tags -->
+        <meta property="og:title" content="Documentation - Flags CDN - NpSync" />
+        <meta
+            property="og:description"
+            content="Discover Flags, an open-source project providing high-quality country flags in multiple sizes. Ideal for any purpose."
+        />
+        <meta property="og:type" content="document" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="NpSync Flags" />
+
+        <!-- Tailwind CDN Link -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="icon" type="image/png" href="/assets/favicon.png" />
+        <style>
+            body {
+                font-family: "Roboto", sans-serif;
+            }
+        </style>
+    </head>
+    <body
+        class="flex flex-col min-h-screen bg-gray-100 leading-normal tracking-normal"
+    >
+        <div class="flex flex-col md:flex-row">
+            <!-- Sidebar -->
+            <nav class="bg-gray-800 w-full md:w-64 min-h-screen p-4 hidden lg:block">
+                <div class="text-white text-xl font-bold mb-6">
+                    <a href="/">
+                        API Docs
+                    </a>
+                </div>
+                <ul class="space-y-4">
+                    <li>
+                        <a
+                            href="#introduction"
+                            class="text-gray-300 hover:text-white"
+                        >
+                            Introduction
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#authentication"
+                            class="text-gray-300 hover:text-white"
+                        >
+                            Authentication
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="#variants"
+                            class="text-gray-300 hover:text-white"
+                        >
+                            Variants
+                        </a>
+                    </li>
+                    <li class="space-y-4">
+                        <a
+                            href="#endpoints"
+                            class="text-gray-300 hover:text-white"
+                        >
+                            Endpoints
+                        </a>
+
+                        <ul class="ps-5 space-y-4">
+                            <li>
+                                <a
+                                    href="#images-svg"
+                                    class="text-gray-300 hover:text-white"
+                                >
+                                    Images (SVG)
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#images-png-jpg-webp"
+                                    class="text-gray-300 hover:text-white"
+                                >
+                                    Images (PNG, JPG, WEBP)
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#zips"
+                                    class="text-gray-300 hover:text-white"
+                                >
+                                    Zips
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="flex-1 p-6">
+                <!-- ================================================= -->
+                <!-- Return to Homepage -->
+                <a
+                    href="/"
+                    class="text-gray-200 hover:100 flex items-center bg-gray-800 px-4 py-2 rounded-lg mb-8 w-max"
+
+                >   Return to Home </a>
+                <!-- ================================================= -->
+                <!-- Header -->
+                <section class="mb-8">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                       Flags API Documentation - NpSync
+                    </h1>
+                    <p class="text-gray-600 mt-2">
+                        Comprehensive guide to using our Flags API
+                    </p>
+                </section>
+
+                <!-- ================================================= -->
+                <!-- Introduction Section -->
+                <section id="introduction" class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900">
+                        Introduction
+                    </h2>
+                    <p class="text-gray-700 mt-2">
+                        Welcome to our API documentation. Here you'll find
+                        information on how to use our flags API in your projects
+                        under <b>1 minute</b>. Ready to use endpoints out of
+                        the box.
+                    </p>
+
+                    <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 font-bold">
+                        BASE URL : https://flags.npsync.com/v1
+                    </div>
+                    <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 font-bold">
+                        HTTP Method : GET
+                    </div>
+                </section>
+
+                <!-- ================================================= -->
+                <!-- Authentication Section -->
+                <section id="authentication" class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900">
+                        Authentication
+                    </h2>
+                    <p class="text-gray-700 mt-2">
+                        Our Flag API is <b>free and doesn't require authentication</b>. You
+                        can start using it right away.
+                    </p>
+                </section>
+
+                <!-- ================================================= -->
+                <!-- Variant Sections -->
+                <section id="variants" class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900">Variants</h2>
+                    <p>Our API supports multiple size and type variants</p>
+                    <p class="text-gray-700 mt-5">
+                        <table class="w-full text-sm text-left text-gray-500 border">
+                                <thead class="text-gray-700 uppercase bg-gray-50 border">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">
+                                            Key
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Values
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b ">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                            SIZE <br> (px)
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            <span>w20</span>,
+                                            <span>w40</span>,
+                                            <span>w80</span>,
+                                            <span>w160</span>,
+                                            <span>w320</span>,
+                                            <span>w640</span>,
+                                            <span>w1280</span>,
+                                            <span>w2560</span>
+                                            <br><br>
+                                            <span>h20</span>,
+                                            <span>h24</li>,
+                                            <span>h40</span>,
+                                            <span>h48</span>,
+                                            <span>h60</span>,
+                                            <span>h80</span>,
+                                            <span>h120</span>,
+                                            <span>h160</span>,
+                                            <span>h240</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white border-b">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                            EXT
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            <span>png</span>,
+                                            <span>webp</span>,
+                                            <span>jpg</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white border-b">
+                                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                            CODE
+                                        </th>
+                                        <td class="px-6 py-4">
+                                            <a
+                                                class="underline underline-offset-4 text-blue-500"
+                                                href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes"
+                                                target="_blank"
+                                            >
+                                                ISO 3166 country code
+                                            </a>
+                                            <br>
+                                            <p>Eg: us, np, in, etc</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </p>
+                </section>
+
+                <!-- Endpoints Section -->
+                <section id="endpoints">
+                    <h2 class="text-2xl font-bold text-gray-900">Endpoints</h2>
+
+                    <!-- Images (SVG) -->
+                    <div class="mt-6" id="images-svg">
+                        <!-- Heading -->
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Images (SVG)
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-gray-700 mt-2">
+                            Programatically get the SVG flag images hosted from our CDN.
+                        </p>
+
+                        <!-- Endpoint -->
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/{CODE}.svg</code>
+                        </div>
+                        <br>
+
+                        <!-- Examples -->
+                        <p class="text-gray-700 mt-2"><b>Examples:</b></p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/np.svg</code>
+                            <br>
+                            <code>GET /countries/us.svg</code>
+                            <br>
+                            <code>GET /countries/in.svg</code>
+                        </div>
+                        <br>
+
+                        <!-- Response -->
+                        <p class="text-gray-700 mt-2"><b>Example response:</b></p>
+
+                        <!-- Nepal SVG Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/np.svg"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/np.svg
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[200px]" src="https://flags.npsync.com/v1/countries/np.svg" alt="Flag of Nepal">
+                        <br>
+
+                        <!-- United States SVG Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/us.svg"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/us.svg
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[400px]" src="https://flags.npsync.com/v1/countries/us.svg" alt="Flag of United States">
+                        <br>
+
+                        <!-- India SVG Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/in.svg"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/in.svg
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[400px]" src="https://flags.npsync.com/v1/countries/in.svg" alt="Flag of India">
+                    </div>
+
+                    <hr class="my-12 border border-2 border-grey-900">
+
+                    <!-- Images (PNG, JPG, WEBP) -->
+                    <div class="mt-6" id="images-png-jpg-webp">
+                        <!-- Heading -->
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Images (PNG, JPG, WEBP)
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-gray-700 mt-2">
+                            Programatically get the flag images hosted from our CDN.
+                        </p>
+
+                        <!-- Endpoint -->
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/{SIZE}/{CODE}.{EXT}</code>
+                        </div>
+                        <br>
+
+                        <!-- Examples -->
+                        <p class="text-gray-700 mt-2"><b>Examples:</b></p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/w160/np.png</code>
+                            <br>
+                            <code>GET /countries/w320/us.webp</code>
+                            <br>
+                            <code>GET /countries/h160/in.jpg</code>
+                        </div>
+                        <br>
+
+                        <!-- Response -->
+                        <p class="text-gray-700 mt-2"><b>Example response:</b></p>
+
+                        <!-- Nepal PNG Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/w160/np.png"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/w160/np.png
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[300px]" src="https://flags.npsync.com/v1/countries/w160/np.png" alt="Flag of Nepal">
+                        <br>
+
+                        <!-- United States WEBP Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/w320/us.webp"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/w320/us.webp
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[400px]" src="https://flags.npsync.com/v1/countries/w320/us.webp" alt="Flag of United States">
+                        <br>
+
+                        <!-- India JPG Flag -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/h160/in.jpg"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/h160/in.jpg
+                            </a>
+                        </p>
+                        <br>
+                        <img class="w-[200px] lg:w-[400px]" src="https://flags.npsync.com/v1/countries/h160/in.jpg" alt="Flag of India">
+                    </div>
+
+                    <hr class="my-12 border border-2 border-grey-900">
+
+                    <!-- Zips -->
+                    <div class="mt-6" id="zips">
+                        <!-- Heading -->
+                        <h3 class="text-xl font-semibold text-gray-800">
+                            Zips
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="text-gray-700 mt-2">
+                            Want to self host the flags? Download the zip files with the extension
+                            of your choice.
+                        </p>
+
+                        <!-- Endpoint -->
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/zips/{EXT}/{SIZE}.zip</code>
+                        </div>
+                        <br>
+
+                        <!-- Examples -->
+                        <p class="text-gray-700 mt-2"><b>Examples:</b></p>
+                        <div class="bg-gray-900 text-gray-100 p-4 rounded mt-4 text-sm">
+                            <code>GET /countries/zips/jpg/w640.zip</code>
+                            <br>
+                            <code>GET /countries/zips/webp/h48.zip</code>
+                        </div>
+                        <br>
+
+                        <!-- Response -->
+                        <p class="text-gray-700 mt-2"><b>Example response:</b></p>
+
+                        <!-- PNG ZIP -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/zips/png/w640.zip"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/zips/png/w640.zip
+                            </a>
+                        </p>
+
+                        <!-- WEBP ZIP -->
+                        <p>
+                            <a
+                                class="text-blue-500 underline underline-offset-4 text-xs"
+                                href="https://flags.npsync.com/v1/countries/zips/webp/h48.zip"
+                                target="_blank"
+                            >
+                                https://flags.npsync.com/v1/countries/zips/webp/h48.zip
+                            </a>
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <p class="text-sm">
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                        NpSync. All rights reserved.
+                    </p>
+                </div>
+                <div class="">
+                    <a href="" class="mb-4 md:mb-0 flex items-top gap-1">
+                        Status
+                        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                    </a>
+                </div>
+                <div>
+                    <nav class="flex flex-wrap justify-center space-x-10">
+                        <a href="https://npsync.com" class="text-sm hover:underline">Home</a>
+                        <a href="https://npsync.com/services" class="text-sm hover:underline">Services</a>
+                        <a href="https://npsync.com/contact" class="text-sm hover:underline">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
